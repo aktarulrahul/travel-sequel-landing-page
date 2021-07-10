@@ -1,0 +1,77 @@
+/* 
+COLORS:
+  light #ECEFA4 rgb(236, 239, 164)
+  Dark #D9DD6B rgb(217, 221, 107)
+
+  used: 
+  light #D54C4C rgb(213, 76, 76)
+  Dark #8D2828 rgb(141, 40, 40)
+*/
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /* So that the borders and the paddings are no longer added to the total width or the total height that we specify for a box. */
+}
+
+body {
+  font-family: 'Lato', sans-serif;
+  /* The properties related to font are usually inherited, so we're using the power of inheritances here */
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.7;
+  color: #777;
+  padding: 30px;
+}
+
+.header {
+  height: 95vh; /* 95% of the viewport height */
+  background-image: linear-gradient(
+      to right bottom,
+      rgba(213, 76, 76, 0.8),
+      rgba(141, 40, 40, 0.8)
+    ),
+    url(../images/img-2.jpg);
+  background-size: cover;
+  background-position: top; /*Fixed the image top*/
+  clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+  position: relative; /* To positon the logo with ref with header */
+}
+/* The easiest way to center anything with the transform, top and left properties. */
+
+.logo-box {
+  position: absolute; /* to set the logo with ref with header class */
+  top: 20px;
+  left: 20px;
+}
+.logo {
+  width: 70px;
+  height: 70px;
+}
+
+.text-box {
+  position: absolute; /* to set the logo with ref with header class */
+  top: 25%;
+  left: 25%;
+  /* transform: translate(-60%, -40%); */
+}
+
+.header-primary {
+  color: white;
+  text-transform: uppercase;
+  text-align: center;
+}
+.header-primary-main {
+  display: block;
+  font-size: 60px;
+  font-weight: 400;
+  letter-spacing: 15px;
+}
+
+.header-primary-sub {
+  display: block;
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 19px;
+}
