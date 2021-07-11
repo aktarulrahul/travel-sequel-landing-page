@@ -55,13 +55,15 @@ body {
   top: 25%;
   left: 25%;
   /* transform: translate(-60%, -40%); */
+
+  text-align: center;
 }
 
 .header-primary {
   color: white;
   text-transform: uppercase;
-  text-align: center;
   backface-visibility: hidden; /* To do little shaking in the header text animation. this property determines if the back part of the element when we transform it is visible or hidden for the user */
+  margin-bottom: 60px;
 }
 .header-primary-main {
   display: block;
@@ -109,4 +111,71 @@ body {
     opacity: 1;
     transform: translate(0);
   }
+}
+
+@keyframes moveInBottom {
+  0% {
+    opacity: 0; /* hide text */
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
+.btn:link,
+.btn:visited {
+  text-decoration: none;
+  text-transform: uppercase;
+  padding: 15px 40px;
+  display: inline-block;
+  border-radius: 100px;
+  transition: all 0.2s;
+  position: relative; /* to fix the position of .btn::after */
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.btn:active {
+  transform: translateY(-1px);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.btn-white {
+  background-color: #fff;
+  color: #777;
+}
+
+.btn::after {
+  /* to add an element that looks exactly like the button that we already have, but we put it behind the button. And when we hover out of the button, then this hidden pseudo-element amazingly goes back behind the button. */
+  content: ''; /* Always necessary,Otherwise it's not going to appear */
+  display: inline-block; /* Because the button that we have is also an inline block. Always necessary,Otherwise it's not going to appear */
+  height: 100%; /* same as parent */
+  width: 100%; /* same as parent */
+  border-radius: 100px; /* same as parent */
+  position: absolute; /* to put it behind actual button */
+  /* This absolute position needs to have a reference, and ref is the first element with the relative position that is can find */
+  top: 0;
+  left: 0;
+  z-index: -1;
+  /* put transition property on the inital state i.e. .btn::after */
+  transition: all 0.4s;
+}
+.btn-white::after {
+  /* For white color button, we also have to do this */
+  background-color: white;
+}
+
+.btn:hover::after {
+  transform: scaleX(1.4) scaleY(1.6);
+  /* put transition property on the inital state i.e. .btn::after */
+  opacity: 0; /* fade up the animation */
+}
+.btn-animated {
+  animation: moveInBottom 0.5s ease-out 0.75s;
+  animation-fill-mode: backwards; /* it will automatically apply the styles up to zero percent before the animation starts */
 }
