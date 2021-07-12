@@ -8,21 +8,33 @@ COLORS:
   Dark #8D2828 rgb(141, 40, 40)
 */
 
-* {
+*,
+*::after,
+*::before {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  /* box-sizing: border-box; */
   /* So that the borders and the paddings are no longer added to the total width or the total height that we specify for a box. */
+  box-sizing: inherit;
+}
+
+html {
+  /* font-size: 10px; */
+  font-size: 62.5%; /* (10/16) = 0.625 */
 }
 
 body {
   font-family: 'Lato', sans-serif;
   /* The properties related to font are usually inherited, so we're using the power of inheritances here */
   font-weight: 400;
-  font-size: 16px;
+  /* font-size: 16px; */
+  font-size: 1.6rem;
   line-height: 1.7;
   color: #777;
-  padding: 30px;
+  /* padding: 30px; */
+  padding: 3rem;
+  box-sizing: border-box;
+  /* So that the borders and the paddings are no longer added to the total width or the total height that we specify for a box. */
 }
 
 .header {
@@ -42,12 +54,14 @@ body {
 
 .logo-box {
   position: absolute; /* to set the logo with ref with header class */
-  top: 20px;
-  left: 20px;
+  /* top: 20px;
+  left: 20px; */
+  top: 2rem;
+  left: 2rem;
 }
 .logo {
-  width: 70px;
-  height: 70px;
+  width: 7rem;
+  height: 7rem;
 }
 
 .text-box {
@@ -63,13 +77,13 @@ body {
   color: white;
   text-transform: uppercase;
   backface-visibility: hidden; /* To do little shaking in the header text animation. this property determines if the back part of the element when we transform it is visible or hidden for the user */
-  margin-bottom: 60px;
+  margin-bottom: 6rem;
 }
 .header-primary-main {
   display: block;
-  font-size: 60px;
+  font-size: 6rem;
   font-weight: 400;
-  letter-spacing: 15px;
+  letter-spacing: 1.5rem;
 
   animation-name: moveInLeft; /* just call the animation from what we defined the name in @keyframes */
   animation-duration: 1s;
@@ -81,18 +95,18 @@ body {
 
 .header-primary-sub {
   display: block;
-  font-size: 20px;
+  font-size: 2rem;
   font-weight: 700;
-  letter-spacing: 19px;
+  letter-spacing: 1.9rem;
   animation: moveInRight 1s ease-out;
 }
 @keyframes moveInLeft {
   0% {
     opacity: 0; /* hide text */
-    transform: translateX(-100px); /* start from left(100px) */
+    transform: translateX(-10rem); /* start from left(100px) */
   }
   80% {
-    transform: translateX(10px);
+    transform: translateX(1rem);
   }
   100% {
     opacity: 1;
@@ -102,10 +116,10 @@ body {
 @keyframes moveInRight {
   0% {
     opacity: 0; /* hide text */
-    transform: translateX(100px); /* start from left(100px) */
+    transform: translateX(10rem); /* start from left(100px) */
   }
   80% {
-    transform: translateX(-10px);
+    transform: translateX(-1rem);
   }
   100% {
     opacity: 1;
@@ -116,7 +130,7 @@ body {
 @keyframes moveInBottom {
   0% {
     opacity: 0; /* hide text */
-    transform: translateY(30px);
+    transform: translateY(3rem);
   }
   100% {
     opacity: 1;
@@ -128,21 +142,22 @@ body {
 .btn:visited {
   text-decoration: none;
   text-transform: uppercase;
-  padding: 15px 40px;
+  padding: 1.5rem 4rem;
   display: inline-block;
-  border-radius: 100px;
+  border-radius: 10rem;
   transition: all 0.2s;
   position: relative; /* to fix the position of .btn::after */
+  font-size: 1.6rem;
 }
 
 .btn:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  transform: translateY(-0.3rem);
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
 }
 
 .btn:active {
-  transform: translateY(-1px);
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  transform: translateY(-0.1rem);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
 }
 
 .btn-white {
@@ -156,7 +171,7 @@ body {
   display: inline-block; /* Because the button that we have is also an inline block. Always necessary,Otherwise it's not going to appear */
   height: 100%; /* same as parent */
   width: 100%; /* same as parent */
-  border-radius: 100px; /* same as parent */
+  border-radius: 10rem; /* same as parent */
   position: absolute; /* to put it behind actual button */
   /* This absolute position needs to have a reference, and ref is the first element with the relative position that is can find */
   top: 0;
