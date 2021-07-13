@@ -52,19 +52,19 @@ body {
 }
 /* The easiest way to center anything with the transform, top and left properties. */
 
-.logo-box {
+.header__logo-box {
   position: absolute; /* to set the logo with ref with header class */
   /* top: 20px;
   left: 20px; */
   top: 2rem;
   left: 2rem;
 }
-.logo {
+.header__logo {
   width: 7rem;
   height: 7rem;
 }
 
-.text-box {
+.header__text-box {
   position: absolute; /* to set the logo with ref with header class */
   top: 25%;
   left: 25%;
@@ -79,7 +79,7 @@ body {
   backface-visibility: hidden; /* To do little shaking in the header text animation. this property determines if the back part of the element when we transform it is visible or hidden for the user */
   margin-bottom: 6rem;
 }
-.header-primary-main {
+.header-primary--main {
   display: block;
   font-size: 6rem;
   font-weight: 400;
@@ -93,7 +93,7 @@ body {
   /* animation-delay: 3s; */
 }
 
-.header-primary-sub {
+.header-primary--sub {
   display: block;
   font-size: 2rem;
   font-weight: 700;
@@ -160,7 +160,7 @@ body {
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
 }
 
-.btn-white {
+.btn--white {
   background-color: #fff;
   color: #777;
 }
@@ -180,7 +180,7 @@ body {
   /* put transition property on the inital state i.e. .btn::after */
   transition: all 0.4s;
 }
-.btn-white::after {
+.btn--white::after {
   /* For white color button, we also have to do this */
   background-color: white;
 }
@@ -190,7 +190,7 @@ body {
   /* put transition property on the inital state i.e. .btn::after */
   opacity: 0; /* fade up the animation */
 }
-.btn-animated {
+.btn--animated {
   animation: moveInBottom 0.5s ease-out 0.75s;
   animation-fill-mode: backwards; /* it will automatically apply the styles up to zero percent before the animation starts */
 }
