@@ -7,7 +7,6 @@ COLORS:
   light #D54C4C rgb(213, 76, 76)
   Dark #8D2828 rgb(141, 40, 40)
 */
-
 *,
 *::after,
 *::before {
@@ -15,13 +14,12 @@ COLORS:
   padding: 0;
   /* box-sizing: border-box; */
   /* So that the borders and the paddings are no longer added to the total width or the total height that we specify for a box. */
-  box-sizing: inherit;
-}
+  box-sizing: inherit; }
 
 html {
   /* font-size: 10px; */
-  font-size: 62.5%; /* (10/16) = 0.625 */
-}
+  font-size: 62.5%;
+  /* (10/16) = 0.625 */ }
 
 body {
   font-family: 'Lato', sans-serif;
@@ -34,109 +32,100 @@ body {
   /* padding: 30px; */
   padding: 3rem;
   box-sizing: border-box;
-  /* So that the borders and the paddings are no longer added to the total width or the total height that we specify for a box. */
-}
+  /* So that the borders and the paddings are no longer added to the total width or the total height that we specify for a box. */ }
 
 .header {
-  height: 95vh; /* 95% of the viewport height */
-  background-image: linear-gradient(
-      to right bottom,
-      rgba(213, 76, 76, 0.8),
-      rgba(141, 40, 40, 0.8)
-    ),
-    url(../images/img-2.jpg);
+  height: 95vh;
+  /* 95% of the viewport height */
+  background-image: linear-gradient(to right bottom, rgba(213, 76, 76, 0.8), rgba(141, 40, 40, 0.8)), url(../images/img-2.jpg);
   background-size: cover;
-  background-position: top; /*Fixed the image top*/
+  background-position: top;
+  /*Fixed the image top*/
   clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
-  position: relative; /* To positon the logo with ref with header */
-}
-/* The easiest way to center anything with the transform, top and left properties. */
+  position: relative;
+  /* To positon the logo with ref with header */ }
 
+/* The easiest way to center anything with the transform, top and left properties. */
 .header__logo-box {
-  position: absolute; /* to set the logo with ref with header class */
+  position: absolute;
+  /* to set the logo with ref with header class */
   /* top: 20px;
   left: 20px; */
   top: 2rem;
-  left: 2rem;
-}
+  left: 2rem; }
+
 .header__logo {
   width: 7rem;
-  height: 7rem;
-}
+  height: 7rem; }
 
 .header__text-box {
-  position: absolute; /* to set the logo with ref with header class */
+  position: absolute;
+  /* to set the logo with ref with header class */
   top: 25%;
   left: 25%;
   /* transform: translate(-60%, -40%); */
-
-  text-align: center;
-}
+  text-align: center; }
 
 .header-primary {
-  color: white;
+  color: #fff;
   text-transform: uppercase;
-  backface-visibility: hidden; /* To do little shaking in the header text animation. this property determines if the back part of the element when we transform it is visible or hidden for the user */
-  margin-bottom: 6rem;
-}
+  backface-visibility: hidden;
+  /* To do little shaking in the header text animation. this property determines if the back part of the element when we transform it is visible or hidden for the user */
+  margin-bottom: 6rem; }
+
 .header-primary--main {
   display: block;
   font-size: 6rem;
   font-weight: 400;
   letter-spacing: 1.5rem;
-
-  animation-name: moveInLeft; /* just call the animation from what we defined the name in @keyframes */
+  animation-name: moveInLeft;
+  /* just call the animation from what we defined the name in @keyframes */
   animation-duration: 1s;
-  animation-timing-function: ease-out; /* this is a function which defines how the animation will proceed */
+  animation-timing-function: ease-out;
+  /* this is a function which defines how the animation will proceed */
   /* animation: name duration timing-function delay iteration-count direction fill-mode; */
   /* animation-iteration-count: 3; */
-  /* animation-delay: 3s; */
-}
+  /* animation-delay: 3s; */ }
 
 .header-primary--sub {
   display: block;
   font-size: 2rem;
   font-weight: 700;
   letter-spacing: 1.9rem;
-  animation: moveInRight 1s ease-out;
-}
+  animation: moveInRight 1s ease-out; }
+
 @keyframes moveInLeft {
   0% {
-    opacity: 0; /* hide text */
-    transform: translateX(-10rem); /* start from left(100px) */
-  }
+    opacity: 0;
+    /* hide text */
+    transform: translateX(-10rem);
+    /* start from left(100px) */ }
   80% {
-    transform: translateX(1rem);
-  }
+    transform: translateX(1rem); }
   100% {
     opacity: 1;
-    transform: translate(0);
-  }
-}
+    transform: translate(0); } }
+
 @keyframes moveInRight {
   0% {
-    opacity: 0; /* hide text */
-    transform: translateX(10rem); /* start from left(100px) */
-  }
+    opacity: 0;
+    /* hide text */
+    transform: translateX(10rem);
+    /* start from left(100px) */ }
   80% {
-    transform: translateX(-1rem);
-  }
+    transform: translateX(-1rem); }
   100% {
     opacity: 1;
-    transform: translate(0);
-  }
-}
+    transform: translate(0); } }
 
 @keyframes moveInBottom {
   0% {
-    opacity: 0; /* hide text */
-    transform: translateY(3rem);
-  }
+    opacity: 0;
+    /* hide text */
+    transform: translateY(3rem); }
   100% {
     opacity: 1;
-    transform: translate(0);
-  }
-}
+    transform: translate(0); } }
 
 .btn:link,
 .btn:visited {
@@ -146,51 +135,54 @@ body {
   display: inline-block;
   border-radius: 10rem;
   transition: all 0.2s;
-  position: relative; /* to fix the position of .btn::after */
-  font-size: 1.6rem;
-}
+  position: relative;
+  /* to fix the position of .btn::after */
+  font-size: 1.6rem; }
 
 .btn:hover {
   transform: translateY(-0.3rem);
-  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
-}
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2); }
 
 .btn:active {
   transform: translateY(-0.1rem);
-  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
-}
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2); }
 
 .btn--white {
   background-color: #fff;
-  color: #777;
-}
+  color: #777; }
 
 .btn::after {
   /* to add an element that looks exactly like the button that we already have, but we put it behind the button. And when we hover out of the button, then this hidden pseudo-element amazingly goes back behind the button. */
-  content: ''; /* Always necessary,Otherwise it's not going to appear */
-  display: inline-block; /* Because the button that we have is also an inline block. Always necessary,Otherwise it's not going to appear */
-  height: 100%; /* same as parent */
-  width: 100%; /* same as parent */
-  border-radius: 10rem; /* same as parent */
-  position: absolute; /* to put it behind actual button */
+  content: '';
+  /* Always necessary,Otherwise it's not going to appear */
+  display: inline-block;
+  /* Because the button that we have is also an inline block. Always necessary,Otherwise it's not going to appear */
+  height: 100%;
+  /* same as parent */
+  width: 100%;
+  /* same as parent */
+  border-radius: 10rem;
+  /* same as parent */
+  position: absolute;
+  /* to put it behind actual button */
   /* This absolute position needs to have a reference, and ref is the first element with the relative position that is can find */
   top: 0;
   left: 0;
   z-index: -1;
   /* put transition property on the inital state i.e. .btn::after */
-  transition: all 0.4s;
-}
+  transition: all 0.4s; }
+
 .btn--white::after {
   /* For white color button, we also have to do this */
-  background-color: white;
-}
+  background-color: #fff; }
 
 .btn:hover::after {
   transform: scaleX(1.4) scaleY(1.6);
   /* put transition property on the inital state i.e. .btn::after */
-  opacity: 0; /* fade up the animation */
-}
+  opacity: 0;
+  /* fade up the animation */ }
+
 .btn--animated {
   animation: moveInBottom 0.5s ease-out 0.75s;
-  animation-fill-mode: backwards; /* it will automatically apply the styles up to zero percent before the animation starts */
-}
+  animation-fill-mode: backwards;
+  /* it will automatically apply the styles up to zero percent before the animation starts */ }

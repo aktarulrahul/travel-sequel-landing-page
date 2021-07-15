@@ -1,0 +1,22 @@
+{
+  "name": "travel-sequel-landing",
+  "version": "1.0.0",
+  "description": "Travel Sequel Landing page with html, CSS and SASS(SCSS)",
+  "main": "index.js",
+  "scripts": {
+    "compile:sass": "node-sass sass/main.scss css/style.css -w"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aktarulrahul/travel-sequel-landing-page.git"
+  },
+  "author": "Aktarul Islam Rahul",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/aktarulrahul/travel-sequel-landing-page/issues"
+  },
+  "homepage": "https://aktarulrahul.github.io/travel-sequel-landing-page/",
+  "devDependencies": {
+    "node-sass": "^6.0.1"
+  }
+}
