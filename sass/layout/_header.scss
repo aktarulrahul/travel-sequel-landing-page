@@ -1,0 +1,37 @@
+.header {
+  height: 95vh; /* 95% of the viewport height */
+  background-image: linear-gradient(
+      to right bottom,
+      rgba($color-primary-light, 0.8),
+      rgba($color-primary-dark, 0.8)
+    ),
+    url(../images/img-2.jpg);
+  background-size: cover;
+  background-position: top; /*Fixed the image top*/
+  clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+  position: relative; /* To positon the logo with ref with header */
+
+  &__logo-box {
+    position: absolute; /* to set the logo with ref with header class */
+    /* top: 20px;
+    left: 20px; */
+    top: 2rem;
+    left: 2rem;
+  }
+  &__logo {
+    width: 7rem;
+    height: 7rem;
+  }
+
+  &__text-box {
+    position: absolute; /* to set the logo with ref with header class */
+    top: 25%;
+    left: 25%;
+    /* transform: translate(-60%, -40%); */
+
+    text-align: center;
+  }
+}
+/* The easiest way to center anything with the transform, top and left properties. */
+
+// .header__logo-box {}

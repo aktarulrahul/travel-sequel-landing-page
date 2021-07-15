@@ -1,0 +1,39 @@
+body {
+  font-family: 'Lato', sans-serif;
+  /* The properties related to font are usually inherited, so we're using the power of inheritances here */
+  font-weight: 400;
+  /* font-size: 16px; */
+  font-size: 1.6rem;
+  line-height: 1.7;
+  color: $color-grey-dark;
+  /* padding: 30px; */
+  padding: 3rem;
+}
+
+.heading-primary {
+  color: $color-white;
+  text-transform: uppercase;
+  backface-visibility: hidden; /* To do little shaking in the header text animation. this property determines if the back part of the element when we transform it is visible or hidden for the user */
+  margin-bottom: 6rem;
+  &--main {
+    display: block;
+    font-size: 6rem;
+    font-weight: 400;
+    letter-spacing: 1.5rem;
+
+    animation-name: moveInLeft; /* just call the animation from what we defined the name in @keyframes */
+    animation-duration: 1s;
+    animation-timing-function: ease-out; /* this is a function which defines how the animation will proceed */
+    /* animation: name duration timing-function delay iteration-count direction fill-mode; */
+    /* animation-iteration-count: 3; */
+    /* animation-delay: 3s; */
+  }
+
+  &--sub {
+    display: block;
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: 1.9rem;
+    animation: moveInRight 1s ease-out;
+  }
+}
