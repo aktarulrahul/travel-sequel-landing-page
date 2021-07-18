@@ -8,6 +8,7 @@
     url(../images/img-2.jpg);
   background-size: cover;
   background-position: top; /*Fixed the image top*/
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
   clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
   position: relative; /* To positon the logo with ref with header */
 
