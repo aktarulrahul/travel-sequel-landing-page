@@ -34,6 +34,14 @@
       background-color: $color-white;
     }
   }
+  &--primary {
+    background-color: $color-primary;
+    color: $color-white;
+    &::after {
+      /* For white color button, we also have to do this */
+      background-color: $color-primary;
+    }
+  }
 
   &::after {
     /* to add an element that looks exactly like the button that we already have, but we put it behind the button. And when we hover out of the button, then this hidden pseudo-element amazingly goes back behind the button. */

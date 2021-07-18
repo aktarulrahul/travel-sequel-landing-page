@@ -131,6 +131,12 @@ body {
 .u-margin-bottom-small {
   margin-bottom: 1.5rem; }
 
+.u-margin-top-huge {
+  margin-top: 10rem; }
+
+.u-margin-top-big {
+  margin-top: 8rem; }
+
 .btn:link, .btn:visited {
   text-decoration: none;
   text-transform: uppercase;
@@ -161,6 +167,13 @@ body {
   .btn--white::after {
     /* For white color button, we also have to do this */
     background-color: #fff; }
+
+.btn--primary {
+  background-color: #bb3b3b;
+  color: #fff; }
+  .btn--primary::after {
+    /* For white color button, we also have to do this */
+    background-color: #bb3b3b; }
 
 .btn::after {
   /* to add an element that looks exactly like the button that we already have, but we put it behind the button. And when we hover out of the button, then this hidden pseudo-element amazingly goes back behind the button. */
@@ -229,6 +242,10 @@ body {
       transform: rotateY(180deg); }
       .card__side--back-1 {
         background-image: linear-gradient(to right bottom, #f9b208, #f98404); }
+      .card__side--back-2 {
+        background-image: linear-gradient(to right bottom, #d54c4c, #8d2828); }
+      .card__side--back-3 {
+        background-image: linear-gradient(to right bottom, #29bb89, #1e6f5c); }
   .card:hover .card__side--front {
     transform: rotateY(-180deg); }
   .card:hover .card__side--back {
@@ -238,13 +255,15 @@ body {
     height: 23rem;
     background-blend-mode: screen;
     -webkit-clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
-    clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%); }
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px; }
     .card__picture--1 {
       background-image: linear-gradient(to right bottom, #f9b208, #f98404), url(../images/tours/sea.jpg); }
     .card__picture--2 {
-      background-image: url(../images/tours/forest.jpg); }
+      background-image: linear-gradient(to right bottom, #d54c4c, #8d2828), url(../images/tours/forest.jpg); }
     .card__picture--3 {
-      background-image: url(../images/tours/snow.jpg); }
+      background-image: linear-gradient(to right bottom, #29bb89, #1e6f5c), url(../images/tours/snow.jpg); }
   .card__heading {
     font-size: 2.8rem;
     font-weight: 300;
@@ -261,6 +280,10 @@ body {
     box-decoration-break: clone; }
     .card__heading-span--1 {
       background-image: linear-gradient(to right bottom, rgba(249, 178, 8, 0.85), rgba(249, 132, 4, 0.85)); }
+    .card__heading-span--2 {
+      background-image: linear-gradient(to right bottom, rgba(213, 76, 76, 0.85), rgba(141, 40, 40, 0.85)); }
+    .card__heading-span--3 {
+      background-image: linear-gradient(to right bottom, rgba(41, 187, 137, 0.85), rgba(30, 111, 92, 0.85)); }
   .card__details {
     padding: 3rem; }
     .card__details ul {
@@ -273,6 +296,23 @@ body {
         padding: 1rem; }
         .card__details ul li:not(:last-child) {
           border-bottom: 1px solid #eee; }
+  .card__cta {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    text-align: center; }
+  .card__price-box {
+    text-align: center;
+    color: #fff;
+    margin-bottom: 8rem; }
+  .card__price-only {
+    font-size: 1.4rem;
+    transform: ""; }
+  .card__price-value {
+    font-size: 6rem;
+    font-weight: 100; }
 
 .composition {
   position: relative; }
@@ -383,11 +423,11 @@ body {
   background-image: linear-gradient(to right bottom, rgba(213, 76, 76, 0.8), rgba(141, 40, 40, 0.8)), url(../images/img-1.jpg);
   background-size: cover;
   transform: skewY(-7deg);
-  margin-top: -11rem; }
+  margin-top: -10rem; }
   .section-features > * {
     transform: skewY(7deg); }
 
 .section-tours {
   background-color: #f7f7f7;
-  padding: 25rem 0 50rem 0;
+  padding: 25rem 0 15rem 0;
   margin-top: -10rem; }
