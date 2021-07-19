@@ -1,0 +1,67 @@
+.story {
+  width: 75%;
+  margin: 0 auto;
+  box-shadow: 0 3rem 6rem rgba($color-black, 0.1);
+  background-color: rgba($color-white, 0.6);
+  border-radius: 3px;
+  padding: 6rem;
+  padding-left: 9rem;
+  font-size: $default-font-size;
+  transform: skewX(-12deg);
+
+  // & > * {
+  //   transform: skewX(12deg);
+  // }
+
+  &__shape {
+    width: 16rem;
+    height: 16rem;
+    float: left;
+    -webkit-shape-outside: circle(50% at 50% 50%);
+    shape-outside: circle(
+      50% at 50% 50%
+    ); //to define the area. circle(radius at X,Y); and Note: it only works if we define width height and float properties.
+    -webkit-clip-path: circle(50% at 50% 50%);
+    clip-path: circle(
+      50% at 50% 50%
+    ); // to clip the backbround as we defined the area
+    transform: translateX(-3rem) skewX(12deg);
+    position: relative;
+  }
+
+  &__img {
+    width: 100%;
+    transform: translateY(-1rem) scale(0.99);
+    transition: transform 0.5s;
+    // backface-visibility: hidden; // to fix small glitch
+  }
+
+  &__text {
+    transform: skewX(12deg);
+    // backface-visibility: hidden; // to fix small glitch
+  }
+
+  &__caption {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 20%);
+    color: $color-white;
+    text-transform: uppercase;
+    font-size: 1.6rem;
+    text-align: center;
+    opacity: 0;
+    transition: all 0.5s;
+    backface-visibility: hidden; // to fix small glitch
+  }
+
+  &:hover &__caption {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
+  &:hover &__img {
+    transform: translateY(0) scale(0.9);
+    filter: blur(1px) brightness(80%);
+    backface-visibility: hidden;
+  }
+}
