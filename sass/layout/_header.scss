@@ -8,9 +8,14 @@
     url(../images/img-2.jpg);
   background-size: cover;
   background-position: top; /*Fixed the image top*/
+  position: relative; /* To positon the logo with ref with header */
   -webkit-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
   clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
-  position: relative; /* To positon the logo with ref with header */
+
+  @include respond(phone) {
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 85vh, 0 100%);
+    clip-path: polygon(0 0, 100% 0, 100% 85vh, 0 100%);
+  }
 
   &__logo-box {
     position: absolute; /* to set the logo with ref with header class */
@@ -26,9 +31,9 @@
 
   &__text-box {
     position: absolute; /* to set the logo with ref with header class */
-    top: 25%;
-    left: 25%;
-    /* transform: translate(-60%, -40%); */
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 
     text-align: center;
   }

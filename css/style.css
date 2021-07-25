@@ -1,3 +1,22 @@
+/*
+0     -   600px     Phone
+600   -   900px     Tablet portrait 
+900   -   1200px    Tablet landscape 
+1200  -   1800px    is where normal styles apply 
+1800px+             Big Desktop 
+
+$breakpoint arguement choices:
+- phone
+- tab-port
+- tab-land
+- big-desktop
+
+ORDER: Base + Typography > General layout + grid > page layout > components
+
+Note: em is the best option for media query. rem is not supported in media query.
+1em = 16px
+600 / 16 = 37.5 em
+*/
 /* 
 COLORS:
   light #ECEFA4 rgb(236, 239, 164)
@@ -53,10 +72,23 @@ html {
   /* font-size: 10px; */
   font-size: 62.5%;
   /* (10/16) = 0.625 */ }
+  @media (max-width: 75em) {
+    html {
+      font-size: 56.25%; } }
+  @media (max-width: 56.25em) {
+    html {
+      font-size: 50%; } }
+  @media (min-width: 112.5em) {
+    html {
+      font-size: 75%; } }
 
 body {
   box-sizing: border-box;
-  /* So that the borders and the paddings are no longer added to the total width or the total height that we specify for a box. */ }
+  /* So that the borders and the paddings are no longer added to the total width or the total height that we specify for a box. */
+  padding: 3rem; }
+  @media (max-width: 56.25em) {
+    body {
+      padding: 0; } }
 
 body {
   font-family: 'Lato', sans-serif;
@@ -66,8 +98,7 @@ body {
   font-size: 1.6rem;
   line-height: 1.7;
   color: #777;
-  /* padding: 30px; */
-  padding: 3rem; }
+  /* padding: 30px; */ }
 
 .heading-primary {
   color: #fff;
@@ -88,12 +119,19 @@ body {
     /* animation: name duration timing-function delay iteration-count direction fill-mode; */
     /* animation-iteration-count: 3; */
     /* animation-delay: 3s; */ }
+    @media (max-width: 37.5em) {
+      .heading-primary--main {
+        letter-spacing: 1rem;
+        font-size: 5rem; } }
   .heading-primary--sub {
     display: block;
     font-size: 2rem;
     font-weight: 700;
     letter-spacing: 1.9rem;
     animation: moveInRight 1s ease-out; }
+    @media (max-width: 37.5em) {
+      .heading-primary--sub {
+        letter-spacing: 0.5rem; } }
 
 .heading-secondary {
   font-size: 3.5rem;
@@ -105,6 +143,12 @@ body {
   color: transparent;
   letter-spacing: 0.2rem;
   transition: all 0.2s; }
+  @media (max-width: 56.25em) {
+    .heading-secondary {
+      font-size: 2.3rem; } }
+  @media (max-width: 37.5em) {
+    .heading-secondary {
+      font-size: 2rem; } }
   .heading-secondary:hover {
     transform: skewY(2deg) skewX(15deg) scale(1.1);
     text-shadow: 0.5rem 1rem 2rem rgba(0, 0, 0, 0.2); }
@@ -570,6 +614,13 @@ body {
   margin: 0 auto; }
   .row:not(:last-child) {
     margin-bottom: 8rem; }
+    @media (max-width: 56.25em) {
+      .row:not(:last-child) {
+        margin-bottom: 6rem; } }
+  @media (max-width: 56.25em) {
+    .row {
+      max-width: 50rem;
+      padding: 0 3rem; } }
   .row::after {
     content: '';
     display: table;
@@ -578,6 +629,13 @@ body {
     float: left; }
     .row [class^='col-']:not(:last-child) {
       margin-right: 6rem; }
+      @media (max-width: 56.25em) {
+        .row [class^='col-']:not(:last-child) {
+          margin-right: 0;
+          margin-bottom: 6rem; } }
+    @media (max-width: 56.25em) {
+      .row [class^='col-'] {
+        width: 100% !important; } }
   .row .col-1-of-2 {
     width: calc((100% - 6rem) / 2); }
   .row .col-1-of-3 {
@@ -596,10 +654,14 @@ body {
   background-size: cover;
   background-position: top;
   /*Fixed the image top*/
-  -webkit-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
-  clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
   position: relative;
-  /* To positon the logo with ref with header */ }
+  /* To positon the logo with ref with header */
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+  clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%); }
+  @media (max-width: 37.5em) {
+    .header {
+      -webkit-clip-path: polygon(0 0, 100% 0, 100% 85vh, 0 100%);
+      clip-path: polygon(0 0, 100% 0, 100% 85vh, 0 100%); } }
   .header__logo-box {
     position: absolute;
     /* to set the logo with ref with header class */
@@ -613,9 +675,9 @@ body {
   .header__text-box {
     position: absolute;
     /* to set the logo with ref with header class */
-    top: 25%;
-    left: 25%;
-    /* transform: translate(-60%, -40%); */
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     text-align: center; }
 
 /* The easiest way to center anything with the transform, top and left properties. */
@@ -624,16 +686,26 @@ body {
   padding: 10rem 0;
   font-size: 1.4rem;
   color: #f7f7f7; }
+  @media (max-width: 56.25em) {
+    .footer {
+      padding: 8rem 0; } }
   .footer__logo-box {
     text-align: center;
     margin-bottom: 8rem; }
   .footer__logo {
     width: auto;
     height: 30rem; }
+    @media (max-width: 37.5em) {
+      .footer__logo {
+        height: 20rem; } }
   .footer__navigation {
     border-top: 1px solid #777;
     padding-top: 2rem;
     display: inline-block; }
+    @media (max-width: 56.25em) {
+      .footer__navigation {
+        width: 100%;
+        text-align: center; } }
   .footer__list {
     list-style: none; }
   .footer__item {
@@ -656,6 +728,10 @@ body {
     padding-top: 2rem;
     width: 80%;
     float: right; }
+    @media (max-width: 56.25em) {
+      .footer__copyright {
+        width: 100%;
+        float: none; } }
 
 .navigation__checkbox {
   display: none; }
@@ -672,6 +748,10 @@ body {
   box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.1);
   text-align: center;
   cursor: pointer; }
+  @media (max-width: 56.25em) {
+    .navigation__button {
+      top: 3rem;
+      right: 3rem; } }
 
 .navigation__background {
   height: 6rem;
@@ -683,6 +763,10 @@ body {
   background-image: radial-gradient(#d54c4c, #8d2828);
   z-index: 1000;
   transition: transform 0.8s cubic-bezier(0.83, 0, 0.17, 1); }
+  @media (max-width: 56.25em) {
+    .navigation__background {
+      top: 3.5rem;
+      right: 3.5rem; } }
 
 .navigation__nav {
   height: 100vh;
