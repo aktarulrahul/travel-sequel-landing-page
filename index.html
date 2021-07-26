@@ -24,25 +24,19 @@
       <nav class="navigation__nav">
         <ul class="navigation__list">
           <li class="navigation__item">
-            <a href="#" class="navigation__link"
-              ><span>01</span>Travel Sequel</a
-            >
+            <a href="" class="navigation__link"><span>01</span>Travel Sequel</a>
           </li>
           <li class="navigation__item">
-            <a href="#" class="navigation__link"
-              ><span>02</span>Your benefits</a
-            >
+            <a href="" class="navigation__link"><span>02</span>Your benefits</a>
           </li>
           <li class="navigation__item">
-            <a href="#" class="navigation__link"
-              ><span>03</span>Popular tours</a
-            >
+            <a href="" class="navigation__link"><span>03</span>Popular tours</a>
           </li>
           <li class="navigation__item">
             <a href="#" class="navigation__link"><span>04</span>Stories</a>
           </li>
           <li class="navigation__item">
-            <a href="#" class="navigation__link"><span>05</span>Book Now</a>
+            <a href="" class="navigation__link"><span>05</span>Book Now</a>
           </li>
         </ul>
       </nav>
@@ -51,7 +45,7 @@
       <div class="header__logo-box">
         <img
           class="header__logo"
-          src="images/TS Landing Logo/White/profile white.png"
+          src="images/TS-Landing-Logo/White/profile white.png"
           alt="Travel Sequel Logo"
         />
       </div>
@@ -60,7 +54,7 @@
           <span class="heading-primary--main"> Travel Sequel </span>
           <span class="heading-primary--sub"> Rolling Under The Sky</span>
         </h1>
-        <a href="#" class="btn btn--white btn--animated">Discover your dream</a>
+        <a href="" class="btn btn--white btn--animated">Discover your dream</a>
       </div>
     </header>
     <!-- <section class="grid-test">
@@ -111,7 +105,7 @@
               like a slice of heaven!
             </p>
 
-            <a href="#" class="btn-text">Learn More&rarr;</a>
+            <a href="" class="btn-text">Learn More&rarr;</a>
           </div>
           <div class="col-1-of-2">
             <div class="composition">
@@ -419,30 +413,44 @@
     </main>
     <footer class="footer">
       <div class="footer__logo-box">
-        <img
-          src="images/TS Landing Logo/main.png"
-          alt="Full logo"
-          class="footer__logo"
-        />
+        <!-- implementing art direction for responsive images in html with <picture> tag. we use <source> for different image for different screen size -->
+        <picture class="footer__logo">
+          <source
+            srcset="
+              images/TS-Landing-Logo/main.png 1x,
+              images/TS-Landing-Logo/main.png 2x
+            "
+            media="(max-width: 37.5em)"
+          />
+          <!-- use 'srcset' for density switching -->
+          <img
+            srcset="
+              images/TS-Landing-Logo/main.png 1x,
+              images/TS-Landing-Logo/main.png 2x
+            "
+            alt="Full logo"
+            class="footer__logo"
+          />
+        </picture>
       </div>
       <div class="row">
         <div class="col-1-of-2">
           <div class="footer__navigation">
             <ul class="footer__list">
               <li class="footer__item">
-                <a href="#" class="footer__link">Company</a>
+                <a href="" class="footer__link">Company</a>
               </li>
               <li class="footer__item">
-                <a href="#" class="footer__link">Contact Us</a>
+                <a href="" class="footer__link">Contact Us</a>
               </li>
               <li class="footer__item">
-                <a href="#" class="footer__link">Careers</a>
+                <a href="" class="footer__link">Careers</a>
               </li>
               <li class="footer__item">
-                <a href="#" class="footer__link">Privacy Policy</a>
+                <a href="" class="footer__link">Privacy Policy</a>
               </li>
               <li class="footer__item">
-                <a href="#" class="footer__link">Terms</a>
+                <a href="" class="footer__link">Terms</a>
               </li>
             </ul>
           </div>
@@ -485,7 +493,7 @@
             laborum consectetur facere, quas quo voluptate pariatur, corporis
             labore veritatis itaque. Officiis.
           </p>
-          <a href="#" class="btn btn--primary">Book Now</a>
+          <a href="" class="btn btn--primary">Book Now</a>
         </div>
       </div>
     </div>
